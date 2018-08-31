@@ -47,7 +47,7 @@ function(x, y, span=2/3, NoXP=NULL, maxit=c(2,2), b=3.5,
     weight <- weight[h]
     rw <- rw[h]
   }
-  ## load C function if necessary (Complile by Rcmd SHLIB lwreg.c)
+  ## load C function if necessary (Compiled by Rcmd SHLIB lwreg.c)
   if(!is.loaded("lwreg")){
     dyn.load("lwreg.dll")
     on.exit(dyn.unload("lwreg.dll"))
