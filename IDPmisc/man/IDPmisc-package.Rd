@@ -7,7 +7,7 @@
 }
 
 \description{
-  The IDPmisc package contains different high-level graphics functions
+  Different high-level graphics functions
   for displaying large datasets, displaying circular data in a very
   flexible way, finding local maxima, brewing color ramps, drawing nice
   arrows, zooming 2D-plots, creating figures with differently colored
@@ -23,8 +23,8 @@
 \tabular{ll}{
   Package: \tab IDPmisc\cr
   Type: \tab Package\cr
-  Version: \tab 1.1.17\cr
-  Date: \tab 2012-11-01\cr
+  Version: \tab 1.1.18\cr
+  Date: \tab 2018-08-31\cr
   License: \tab  GPL (>= 3) (GNU Public Licence)\cr
 }
 
