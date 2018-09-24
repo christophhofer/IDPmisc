@@ -12,7 +12,6 @@
 
 #include <S.h>     /* NEEDs to be R.h!!! R header; includes <math.h>,<stdio.h> among others  */
 
-
 #define	min(a, b)	( ((a) < (b)) ? (a) : (b) )
 #define	max(a, b)	( ((a) > (b)) ? (a) : (b) )
 #define	sign(a)		( ((a) == 0) ? 0 : (((a) > 0) ? 1 : -1) )
@@ -44,13 +43,14 @@
 
 
 void lwreg(double x[], double y[], int *n, int *f, double *delta,
-	    double ow[], double yfit[])
+	   double ow[], double yfit[])
 
 {
   int nleft, nright, nrt, last, icp, j;
   double range, d1, d2, denom, sow, a, b, c, r, cut, h, h9, h1, *w;
 
-  w = Salloc(*n, double);  /* adjusted 2004 NEEDS a change!!!*/
+  /* w = (double *) R_alloc(*n, sizeof(double));
+  w = Salloc(*n, double);
 
 /* ------------------------------ body ---------------------------------- */
 
@@ -133,8 +133,6 @@ void lwreg(double x[], double y[], int *n, int *f, double *delta,
     icp = max(last+1,icp-1);  /* back 1 point so interpolation within delta,
                                  but always go forward                      */
   } while(last < (*n - 1));   /* end of repeat-until loop */
-
-             /* free memory  -- not needed 2004*/
 
   return;
 }

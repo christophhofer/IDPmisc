@@ -37,6 +37,7 @@ temp/
 
 # Output files from R CMD build
 /*.tar.gz
+/*.zip
 
 # Output files from R CMD check
 /*.Rcheck/
