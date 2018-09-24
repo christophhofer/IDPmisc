@@ -10,7 +10,7 @@
 
 /* -----------------------  Some definitions  --------------------------- */
 
-#include <S.h>     /* NEEDs to be R.h!!! R header; includes <math.h>,<stdio.h> among others  */
+#include <R.h>     /* R header  */
 
 #define	min(a, b)	( ((a) < (b)) ? (a) : (b) )
 #define	max(a, b)	( ((a) > (b)) ? (a) : (b) )
@@ -41,7 +41,6 @@
  *
  */
 
-
 void lwreg(double x[], double y[], int *n, int *f, double *delta,
 	   double ow[], double yfit[])
 
@@ -49,8 +48,8 @@ void lwreg(double x[], double y[], int *n, int *f, double *delta,
   int nleft, nright, nrt, last, icp, j;
   double range, d1, d2, denom, sow, a, b, c, r, cut, h, h9, h1, *w;
 
-  /* w = (double *) R_alloc(*n, sizeof(double));
-  w = Salloc(*n, double);
+  /* w = Salloc(*n, double); */
+  w = (double *) R_alloc(*n, sizeof(double));
 
 /* ------------------------------ body ---------------------------------- */
 
