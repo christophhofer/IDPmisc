@@ -5,7 +5,7 @@
  *
  * ARu, April 1999; modified April 2004
  *
- * Compiled by Rcmd SHLIB locreg.c (2004)
+ * Compiled by R CMD SHLIB locreg.c (2004)
  */
 
 /* -----------------------  Some definitions  --------------------------- */

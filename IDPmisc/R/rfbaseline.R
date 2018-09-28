@@ -47,11 +47,7 @@ rfbaseline <-
         weight <- weight[h]
         rw <- rw[h]
     }
-    ## load C function if necessary (Compiled by Rcmd SHLIB lwreg.c)
-    if(!is.loaded("lwreg")){
-        dyn.load("lwreg.dll")
-        on.exit(dyn.unload("lwreg.dll"))
-    }
+
     fit <- NULL
     ##
     ## "robust iteration"  (irlls)
@@ -68,8 +64,7 @@ rfbaseline <-
             }
             qub <- if(is.null(NoXP)) max(floor(span*nn), 2)
                    else NoXP
-            fit <- .C('lwreg',
-                      PACKAGE="IDPmisc",
+            fit <- .C(lwreg,
                       xx=as.double(xx),
                       as.double(yy),
                       as.integer(nn),
@@ -82,15 +77,14 @@ rfbaseline <-
             qub <- if(is.null(NoXP)) max(floor(span*n), 2)
                    else NoXP
             wweight <- weight*rw
-            fit <- .C('lwreg',
-                      PACKAGE="IDPmisc",
-                      xx=as.double(x),
+            fit <- .C(lwreg,
+                      xx = as.double(x),
                       as.double(y),
                       as.integer(n),
                       as.integer(qub),
                       as.double(delta),
                       as.double(wweight),
-                      yfit=double(n))
+                      yfit = double(n))
         }
         ## calculation of weights for irls
         if(iiter < MAXIT[2]){

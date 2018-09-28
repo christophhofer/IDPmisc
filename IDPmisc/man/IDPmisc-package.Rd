@@ -3,7 +3,7 @@
 \alias{IDPmisc}
 \docType{package}
 
-\title{Utilities of Institute of Data Analyses and Process Design (www.idp.zhaw.ch)
+\title{Utilities of Institute of Data Analyses and Process Design (www.zhaw.ch/idp)
 }
 
 \description{
@@ -20,19 +20,17 @@
 }
 
 \details{
-\tabular{ll}{
-  Package: \tab IDPmisc\cr
-  Type: \tab Package\cr
-  Version: \tab 1.1.18\cr
-  Date: \tab 2018-08-31\cr
-  License: \tab  GPL (>= 3) (GNU Public Licence)\cr
-}
-
+  \tabular{ll}{
+    Package: \tab IDPmisc\cr
+    Type: \tab Package\cr
+    Version: \tab 1.1.18\cr
+    Date: \tab 2018-09-28\cr
+    License: \tab  GPL (>= 3) (GNU Public Licence)\cr
+  }
 }
 
 \author{
 Rene Locher, Andreas Ruckstuhl et al.
-
 Maintainer: Rene Locher <rene.locher@zhaw.ch>
 }
 

@@ -1,4 +1,4 @@
-##useDynLib(IDPmisc)
+useDynLib(IDPmisc, .registration = TRUE)
 importFrom("grDevices", "col2rgb", "dev.print", "hsv", "n2mfrow",
            "postscript", "rgb2hsv", "savePlot")
 importFrom("methods", "is", "new")

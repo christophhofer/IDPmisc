@@ -1,4 +1,4 @@
-REM build.bat IDPmisc
+REM build.bat
 
 set R=R-3.5.1
 set pckg=IDPmisc
