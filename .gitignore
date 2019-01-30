@@ -23,8 +23,17 @@ temp/
 *.xls
 *.xlsx
 
-# documentation directory
+# Word files
+*.doc
+*.docx
+
+# Documentation files
 *.pdf
+*.ps
+
+# Images
+*.png
+*.jpg
 
 # History files
 .Rhistory

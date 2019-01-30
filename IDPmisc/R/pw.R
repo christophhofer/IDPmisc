@@ -1,0 +1,12 @@
+pw <-
+    function(Td, warn = TRUE){
+        ## Author: Rene Locher
+        ## Version 2019-01-30
+
+        x <- Td
+        x[is.na(x)] <- 0
+        if (any(x < -65 | x > 60) & warn)
+            warning("Some temperatures are less than -65°C or more than 60°C!")
+
+        return(ifelse(Td >= 0, p.aw(Td, warn=FALSE), p.ai(Td, warn=FALSE)))
+    }
