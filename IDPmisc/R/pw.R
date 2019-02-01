@@ -8,5 +8,5 @@ pw <-
         if (any(x < -65 | x > 60) & warn)
             warning("Some temperatures are less than -65 deg C or more than 60 deg C!")
 
-        return(ifelse(Td >= 0, p.aw(Td, warn=FALSE), p.ai(Td, warn=FALSE)))
+        return(ifelse(Td > 0, p.aw(Td, warn=FALSE), p.ai(Td, warn=FALSE)))
     }

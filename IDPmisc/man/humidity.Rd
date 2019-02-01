@@ -6,9 +6,9 @@
 \alias{Td.aw}
 \alias{Td}
 \alias{Tf.ai}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
-  Converting Humidity Measures into each other
+  Converting Humidity Measures into Each Other
 }
 \description{
   Converting dew point (of water in air) into vapor pressure or relative humidity and vice versa.
@@ -34,23 +34,36 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
     Dew point of air in \eqn{[^\circ \textnormal{C}]}.
   }
   \item{pw}{
-    Vapour pressure in \eqn{[\textnormal{hPa}]}.
+    Saturation vapour pressure in \eqn{[\textnormal{hPa}]}.
   }
   \item{warn}{
     When \code{TRUE} and arguments are out of range, a warning is thrown.
   }
 }
 \details{
-
+All vapour pressures are calculated for pure water vapour and not for
+moist air.
 }
 \value{
-  \code{hr} transforms dew point at a certain temperature into
-  relative humidity. \code{p.ai} transforms dew point into vapour
-  pressure above liquid water. \code{p.aw} transforms dew point into vapour
-  pressure above ice. \code{pw} transforms dew point into vapour
-  pressure. \code{Td.aw} transforms vapour pressure or relative humidity and
-  temperature into dew point above water. \code{Td.ai} transforms vapour pressure or relative humidity and
-  temperature into dew point above ice.
+  \code{hr} transforms dew point above ice / water at a certain temperature into
+  relative humidity (\eqn{-65^\circ\textnormal{C} <= T <=
+    60^\circ\textnormal{C}}).\cr
+  \code{pw} transforms dew point into saturation vapour pressure above ice
+  (\eqn{-65^\circ\textnormal{C} <= T <=
+    0^\circ\textnormal{C}})  and above water (\eqn{0^\circ\textnormal{C} < T <=
+    60^\circ\textnormal{C}}).\cr
+  \code{p.ai} transforms dew point into saturation vapour
+  pressure above ice (\eqn{-65^\circ\textnormal{C} <= T <=
+    0^\circ\textnormal{C}}).\cr
+  \code{p.aw} transforms dew point into saturation vapour
+  pressure above liquid water (\eqn{-45^\circ\textnormal{C} <= T <=
+    60^\circ\textnormal{C}}).\cr
+  \code{Td.aw} transforms vapour pressure or relative humidity and
+  temperature into dew point above water (\eqn{-45^\circ\textnormal{C} <= T <=
+    60^\circ\textnormal{C}}).\cr
+  \code{Tf.ai} transforms vapour pressure or relative humidity and
+  temperature into frost point above ice (\eqn{-65^\circ\textnormal{C} <= T <=
+    0^\circ\textnormal{C}}).
 }
 \references{
  Guide to Meteorological Instruments and Methods of Observation, WMO,
@@ -59,14 +72,7 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
 \author{
 Rene Locher
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
  pw(Td = c(-65, -45, 0, 30, 60))
@@ -74,9 +80,9 @@ Rene Locher
 
  hr(T = c(20, 30, 40), Td = c(0, 20, 30))
  ## [1] 26.20257 55.09561 57.46519
+
+ hr(T = seq(0, 60, 5), Td = 0)
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
 \keyword{ arith }% use one of  RShowDoc("KEYWORDS")
 
