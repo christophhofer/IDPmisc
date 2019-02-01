@@ -2,13 +2,6 @@ Tf.ai <-
     function(pw = NULL, T = NULL, hr = NULL, warn = TRUE) {
         ## Author: Rene Locher
         ## Version 2019-01-30
-
-        ## cf. Guide to Meteorological Instruments and Methods of Observation,
-        ## WMO, WMO-No. 8, Seventh edition, 2008, 1.4-29 Annex 4.B
-        ## Frost point above ice
-        ## Temperature range -65 < T < 0°C
-        ## [T] = [°C], [DewPoint] = [hPa]
-
         Tf1 <- function(pw) {
             num <- 272.62*log(pw/6.112)
             den <- 22.46 - log(pw/6.112)
@@ -26,10 +19,10 @@ Tf.ai <-
 
         if (is.null(pw)) {
             x <- T
-            x[is.na(x1)] <- 0
+            x[is.na(x)] <- 0
             if (any(x < Tmin | x > Tmax) & warn)
                 warning(paste("Some temperatures are below",
-                              Tmin, "and / or above", Tmax, "°C!"))
+                              Tmin, "and / or above", Tmax, "deg C!"))
             return(Tf1(pw(T)*hr/100))
         } else {
             x <- pw

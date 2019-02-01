@@ -1,5 +1,11 @@
 \name{humidity}
 \alias{hr}
+\alias{p.ai}
+\alias{p.aw}
+\alias{pw}
+\alias{Td.aw}
+\alias{Td}
+\alias{Tf.ai}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Converting Humidity Measures into each other
@@ -19,36 +25,39 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{hr}{
-    Relative humidity in \eqn{[ \textnormal{\%} ]}.
+    Relative humidity in \eqn{[\textnormal{\%}]}.
   }
   \item{T}{
-    Temperature of air in \eqn{[ ^\circ \textnormal{C} ]}.
+    Temperature of air in \eqn{[^\circ \textnormal{C}]}.
   }
   \item{Td}{
-    Dew point of air in \eqn{[ ^\circ \textnormal{C} ]}.
+    Dew point of air in \eqn{[^\circ \textnormal{C}]}.
   }
   \item{pw}{
-    Vapor pressure in \eqn{[ \textnormal{hPa} ]}.
+    Vapour pressure in \eqn{[\textnormal{hPa}]}.
   }
   \item{warn}{
-    When \code{TRUE} and arguments are out of range, a warning is given.
+    When \code{TRUE} and arguments are out of range, a warning is thrown.
   }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  \code{hr} transforms dew point at a certain temperature into
+  relative humidity. \code{p.ai} transforms dew point into vapour
+  pressure above liquid water. \code{p.aw} transforms dew point into vapour
+  pressure above ice. \code{pw} transforms dew point into vapour
+  pressure. \code{Td.aw} transforms vapour pressure or relative humidity and
+  temperature into dew point above water. \code{Td.ai} transforms vapour pressure or relative humidity and
+  temperature into dew point above ice.
 }
 \references{
-%% ~put references to the literature/web site here ~
+ Guide to Meteorological Instruments and Methods of Observation, WMO,
+ WMO-No. 8, Seventh edition, 2008, updated 2010, 1.4-29 Annex 4.B
 }
 \author{
-%%  ~~who you are~~
+Rene Locher
 }
 \note{
 %%  ~~further notes~~
@@ -60,13 +69,14 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+ pw(Td = c(-65, -45, 0, 30, 60))
+ Td(pw = pw(c(-20, 0, 20)))
 
-## The function is currently defined as
+ hr(T = c(20, 30, 40), Td = c(0, 20, 30))
+ ## [1] 26.20257 55.09561 57.46519
+}
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ arith }% use one of  RShowDoc("KEYWORDS")
+

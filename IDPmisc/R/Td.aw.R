@@ -3,12 +3,6 @@ Td.aw <-
         ## Author: Rene Locher
         ## Version 2019-01-30
 
-        ## cf. Guide to Meteorological Instruments and Methods of Observation,
-        ## WMO, WMO-No. 8, Seventh edition, 2008, 1.4-29 Annex 4.B
-        ## Dew point above *liquid* water (also below 0°C)
-        ## Temperature range -45 < T < 60°C
-        ## [T] = [°C], [Td] = [hPa]
-
         Td1 <- function(pw) {
             num <- 243.12 * log(pw/6.112)
             den <- 17.62 - log(pw/6.112)
@@ -29,7 +23,7 @@ Td.aw <-
             x[is.na(x)] <- 0
             if (any(x < Tmin | x > Tmax) & warn)
                 warning(paste("Some temperatures are below",
-                              Tmin, "and / or above", Tmax, "°C!"))
+                              Tmin, "and / or above", Tmax, "deg C!"))
             return(Td1(pw(T)*hr/100))
         } else {
             x <- pw

@@ -2,14 +2,6 @@ Td <-
     function(pw = NULL, T = NULL, hr = NULL, warn = TRUE) {
         ## Author: Rene Locher
         ## Version 2019-01-30
-
-        ## cf. Guide to Meteorological Instruments and Methods of Observation,
-        ## WMO, WMO-No. 8, Seventh edition, 2008, 1.4-29 Annex 4.B
-        ## Dew point above water / ice
-        ## Temperature range -65 < T < 60°C and
-        ## 0.005400077 < p < 199.9329 hPa respectively
-        ## [T] = [°C], [p] = [hPa]
-
         pmin <- 0.005400077
         pmax <- 199.9329
         Tmin <- -65
@@ -24,7 +16,7 @@ Td <-
             x[is.na(x)] <- 0
             if (any(x < Tmin | x > Tmax) & warn)
                 warning(paste("Some temperatures are below",
-                              Tmin, "and / or above", Tmax, "°C!"))
+                              Tmin, "and / or above", Tmax, "deg C!"))
             return(ifelse(T >= 0, Td.aw(pw = pw(T)*hr/100, warn = FALSE), Tf.ai(pw = pw(T)*hr/100, warn = FALSE)))
         } else {
             x <- pw
