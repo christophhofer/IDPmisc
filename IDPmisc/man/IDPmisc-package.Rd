@@ -15,7 +15,7 @@
     Package: \tab IDPmisc\cr
     Type: \tab Package\cr
     Version: \tab 1.1.19\cr
-    Date: \tab 2019-02-01\cr
+    Date: \tab 2019-02-11\cr
     License: \tab  GPL (>= 3) (GNU Public Licence)\cr
   }
 }
@@ -30,6 +30,7 @@ Maintainer: Rene Locher <rene.locher@zhaw.ch>
 %%
 
 \keyword{ package }
+\keyword{ arith }
 \keyword{ dplot }
 \keyword{ hplot }
 \keyword{ manip }

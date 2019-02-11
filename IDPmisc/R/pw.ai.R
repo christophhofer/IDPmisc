@@ -1,4 +1,4 @@
-p.ai <-
+pw.ai <-
     function(Td, warn = TRUE) {
         ## Author: Rene Locher
         ## Version 2019-01-30

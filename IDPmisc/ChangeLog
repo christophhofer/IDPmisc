@@ -448,7 +448,7 @@
 	* iplot: Resetting par to previous settings.
 	* rfbaseline: .C calls adapted to registered C function
 
-2019-02-01 Rene Locher
+2019-02-11 Rene Locher
 	IDPmisc V1.1.19
 	* New functions for converting humidity measures added
 

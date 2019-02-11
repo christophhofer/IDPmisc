@@ -1,10 +1,10 @@
 \name{humidity}
 \alias{hr}
-\alias{p.ai}
-\alias{p.aw}
 \alias{pw}
-\alias{Td.aw}
+\alias{pw.ai}
+\alias{pw.aw}
 \alias{Td}
+\alias{Td.aw}
 \alias{Tf.ai}
 
 \title{
@@ -15,11 +15,11 @@
 }
 \usage{
 hr(T, Td, warn = TRUE)
-p.ai(Td, warn = TRUE)
-p.aw(Td, warn = TRUE)
 pw(Td, warn = TRUE)
-Td.aw(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
+pw.ai(Td, warn = TRUE)
+pw.aw(Td, warn = TRUE)
 Td(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
+Td.aw(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
 Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -41,8 +41,8 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
   }
 }
 \details{
-All vapour pressures correspond to pure water vapour and not to water
-  vapour in air.
+All vapour pressures correspond to pure water vapour and are not
+  adjusted to water vapour in air.
 }
 \value{
   \code{hr} transforms dew point above ice / water at a certain temperature into
@@ -52,10 +52,10 @@ All vapour pressures correspond to pure water vapour and not to water
   (\eqn{-65^\circ\textnormal{C} <= T <=
     0^\circ\textnormal{C}})  and above water (\eqn{0^\circ\textnormal{C} < T <=
     60^\circ\textnormal{C}}) respectively.\cr
-  \code{p.ai} transforms dew point into saturation vapour
+  \code{pw.ai} transforms dew point into saturation vapour
   pressure above ice (\eqn{-65^\circ\textnormal{C} <= T <=
     0^\circ\textnormal{C}}).\cr
-  \code{p.aw} transforms dew point into saturation vapour
+  \code{pw.aw} transforms dew point into saturation vapour
   pressure above liquid water (\eqn{-45^\circ\textnormal{C} <= T <=
     60^\circ\textnormal{C}}).\cr
   \code{Td} transforms vapour pressure or relative humidity and

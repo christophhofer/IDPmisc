@@ -1,4 +1,4 @@
-p.aw <-
+pw.aw <-
     function(Td, warn = TRUE) {
         ## Author: Rene Locher
         ## Version 2019-01-30
