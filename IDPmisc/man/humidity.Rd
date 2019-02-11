@@ -41,8 +41,8 @@ Tf.ai(pw = NULL, T = NULL, hr = NULL, warn = TRUE)
   }
 }
 \details{
-All vapour pressures are calculated for pure water vapour and not for
-moist air.
+All vapour pressures correspond to pure water vapour and not to water
+  vapour in air.
 }
 \value{
   \code{hr} transforms dew point above ice / water at a certain temperature into
@@ -51,13 +51,17 @@ moist air.
   \code{pw} transforms dew point into saturation vapour pressure above ice
   (\eqn{-65^\circ\textnormal{C} <= T <=
     0^\circ\textnormal{C}})  and above water (\eqn{0^\circ\textnormal{C} < T <=
-    60^\circ\textnormal{C}}).\cr
+    60^\circ\textnormal{C}}) respectively.\cr
   \code{p.ai} transforms dew point into saturation vapour
   pressure above ice (\eqn{-65^\circ\textnormal{C} <= T <=
     0^\circ\textnormal{C}}).\cr
   \code{p.aw} transforms dew point into saturation vapour
   pressure above liquid water (\eqn{-45^\circ\textnormal{C} <= T <=
     60^\circ\textnormal{C}}).\cr
+  \code{Td} transforms vapour pressure or relative humidity and
+  temperature into frost point above ice (\eqn{-65^\circ\textnormal{C} <= T <=
+    0^\circ\textnormal{C}}) and dew point above water (\eqn{0^\circ\textnormal{C} < T <=
+    60^\circ\textnormal{C}}) respectively.\cr
   \code{Td.aw} transforms vapour pressure or relative humidity and
   temperature into dew point above water (\eqn{-45^\circ\textnormal{C} <= T <=
     60^\circ\textnormal{C}}).\cr
@@ -73,7 +77,6 @@ moist air.
 Rene Locher
 }
 
-}
 \examples{
  pw(Td = c(-65, -45, 0, 30, 60))
  Td(pw = pw(c(-20, 0, 20)))
