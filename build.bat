@@ -1,8 +1,8 @@
 REM build.bat
 
-set R=R-3.5.1
+set R=R-3.6.1
 set pckg=IDPmisc
-set version=1.1.19
+set version=1.1.20
 
 setlocal
 path %path%;"C:\Program Files\R\%R%\bin\x64";"C:\Program Files\R\%R%\bin\i386"
