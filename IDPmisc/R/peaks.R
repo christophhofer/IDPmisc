@@ -23,7 +23,7 @@ peaks <- function(x, y = NULL, minPH, minPW, thr, stepF = 0.49){
   ## the preciser the values of the peak widths
   if (stepF>=0.5) stop("'stepF' must be smaller than 0.5")
 
-  peak.x <- peak.y <- peak.w <- NULL
+  peak.x <- peak.y <- peak.w <- peak.h <- NULL
   lev <- thr - stepF*minPH
   len.yy <- length(yy)
   
@@ -64,11 +64,12 @@ peaks <- function(x, y = NULL, minPH, minPW, thr, stepF = 0.49){
         peak.x <- c(peak.x,x[i])
         peak.y <- c(peak.y,y[i])
         peak.w <- c(peak.w,PW)
+        peak.h <- c(peak.h,PH)
       }
     } ## for
   } ## repeat
 
-  res <- data.frame(x=peak.x, y=peak.y, w=peak.w)
+  res <- data.frame(x=peak.x, y=peak.y, w=peak.w, h=peak.h)
   res <- res[order(res$x),]
   return(res)
 } ## peaks
