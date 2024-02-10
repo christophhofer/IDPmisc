@@ -1,7 +1,7 @@
 Package: IDPmisc
 Type: Package
 Version: 1.1.21
-Date: 2024-02-06
+Date: 2024-02-07
 Depends: R(>= 3.0.0)
 Imports: methods, grid, lattice
 Suggests: SwissAir(>= 1.1.3)

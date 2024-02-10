@@ -1,7 +1,10 @@
 \name{internals}
 \alias{rose.grob}
 \alias{plotdat}
-\alias{plot.page}
+\alias{plotPage}
+\alias{iplotMain}
+\alias{segments.circle}
+\alias{griddat}
 
 \title{Internal Functions}
 \description{

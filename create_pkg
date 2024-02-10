@@ -1,0 +1,27 @@
+#!/bin/bash
+# ---------------------------------------
+# 2023-02-06 hofc
+
+read -p "Press [Enter] start building IDPmisc package"
+
+pckg=IDPmisc
+version=1.1.21
+
+cd /Users/hofc/gitrepos/idp/IDPmisc/
+
+
+echo Removing outdated directories -----------
+
+if [ -d "$pckg.Rcheck" ] ;
+then rm -fR "$pckg.Rcheck" ;
+fi
+
+if [ -df "$pckg\_$version.tar.gz" ] ;
+then rm -fR "$pckg\_$version.tar.gz" ;
+fi
+
+R CMD build --resave-data --resave-data $pckg
+
+R CMD check --as-cran $pckg\_$version.tar.gz
+
+read -p "Press [Enter] to close this window"
